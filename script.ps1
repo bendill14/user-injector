@@ -2,13 +2,13 @@
 Import-Module ActiveDirectory
 
 # Paramètres
-$csvPathUsers = "C:\chemin\vers\importUSERS.csv"
-$csvPathAdmins = "C:\chemin\vers\importADMIN.csv"
+$csvPathUsers = "C:\Script\importUSERS.csv"
+$csvPathAdmins = "C:\Script\importADMIN.csv"
 $ouPathUsers = "OU=USER,DC=test,DC=lan"
 $ouPathAdmins = "OU=ADMIN,DC=test,DC=lan"
 
 # Fonction pour créer des utilisateurs
-function Creer-UtilisateursAD {
+function New-UtilisateursAD {
     param (
         [string]$csvPath,
         [string]$ouPath
@@ -40,5 +40,5 @@ function Creer-UtilisateursAD {
 }
 
 # Création des utilisateurs et des administrateurs
-Creer-UtilisateursAD -csvPath $csvPathUsers -ouPath $ouPathUsers
-Creer-UtilisateursAD -csvPath $csvPathAdmins -ouPath $ouPathAdmins
+New-UtilisateursAD -csvPath $csvPathUsers -ouPath $ouPathUsers
+New-UtilisateursAD -csvPath $csvPathAdmins -ouPath $ouPathAdmins
